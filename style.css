@@ -1,0 +1,188 @@
+/* RESET DEFAULT BROWSER STYLES */
+* {
+  margin: 0;              /* removes default spacing */
+  padding: 0;             /* removes default padding */
+  box-sizing: border-box; /* makes width include padding & border */
+}
+
+/* BODY = FULL SCREEN BACKGROUND */
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh; /* ensures full screen height */
+
+  /* GRADIENT BACKGROUND (your Canva colors) */
+  background: linear-gradient(
+    90deg,
+    #f4b2db 0%,   /* pink */
+    #efc2c6 52%,  /* peach */
+    #edd983 100%  /* yellow */
+  );
+
+  overflow-x: hidden; /* prevents horizontal scrolling */
+}
+
+/* MAIN HERO SECTION */
+.hero {
+  min-height: 100vh; /* fills entire screen vertically */
+  width: 100%;
+
+  /* spacing inside the section */
+  padding: 25px 55px 40px;
+
+  display: flex;
+  flex-direction: column; /* stack navbar + content vertically */
+}
+
+/* NAVBAR (LOGO + LINKS) */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: flex-start;        /* align at the top */
+  margin-bottom: 25px;            /* space below navbar */
+}
+
+/* LOGO IMAGE */
+.logo img {
+  width: 80px;        /* controls logo size */
+  height: 80px;
+  object-fit: contain; /* keeps proportions correct */
+  display: block;
+}
+
+/* NAVIGATION LINKS CONTAINER */
+.nav-links {
+  list-style: none; /* removes bullets */
+  display: flex;    /* makes links horizontal */
+  gap: 28px;        /* space between links */
+  margin-top: 8px;  /* slight vertical alignment tweak */
+}
+
+/* INDIVIDUAL LINKS */
+.nav-links a {
+  text-decoration: none; /* removes underline */
+  color: #41645f;        /* muted green */
+  font-size: 16px;
+  transition: 0.3s;      /* smooth hover effect */
+}
+
+/* HOVER EFFECT */
+.nav-links a:hover {
+  color: #0b6b6d; /* darker green */
+}
+
+/* MAIN CONTENT (IMAGE + TEXT) */
+.hero-content {
+  flex: 1; /* takes remaining vertical space */
+
+  display: flex;
+  align-items: center;       /* vertical alignment */
+  justify-content: center;   /* center horizontally */
+
+  gap: 95px; /* space between image and text */
+
+  max-width: 1250px; /* prevents content from stretching too wide */
+  width: 100%;
+  margin: 0 auto; /* centers content */
+}
+
+/* PRODUCT IMAGE */
+.hero-image img {
+  width: 430px;      /* main image size */
+  max-width: 100%;   /* responsive */
+  border-radius: 34px; /* rounded corners like Canva */
+  display: block;
+}
+
+/* TEXT CONTAINER */
+.hero-text {
+  max-width: 520px; /* keeps text readable */
+}
+
+/* MAIN HEADING */
+.hero-text h1 {
+  font-family: Georgia, serif; /* elegant font */
+  font-size: 78px;             /* big title */
+  line-height: 0.95;           /* tight spacing between lines */
+  color: #0b6b6d;              /* main brand color */
+  margin-bottom: 22px;
+}
+
+/* SUBTEXT */
+.hero-text p {
+  font-size: 22px;
+  color: #5c6a68; /* softer gray-green */
+  margin-bottom: 28px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block; /* allows padding + sizing */
+
+  padding: 14px 34px;
+  background-color: #f3f0ea; /* soft cream color */
+  color: #4b5b53;
+
+  text-decoration: none;
+  border: 1px solid #9ea39d;
+  border-radius: 2px;
+
+  font-size: 16px;
+
+  transition: 0.3s; /* smooth hover */
+}
+
+/* BUTTON HOVER EFFECT */
+.btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px); /* slight lift effect */
+}
+
+/* ================= RESPONSIVENESS ================= */
+
+/* TABLETS */
+@media (max-width: 1100px) {
+
+  .hero-content {
+    gap: 55px; /* reduce spacing */
+  }
+
+  .hero-text h1 {
+    font-size: 62px; /* smaller heading */
+  }
+
+  .hero-image img {
+    width: 360px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+
+  .hero {
+    padding: 20px 25px 30px;
+  }
+
+  .navbar {
+    flex-direction: column; /* stack logo + nav */
+    gap: 15px;
+  }
+
+  .nav-links {
+    margin-top: 0;
+    gap: 18px;
+  }
+
+  .hero-content {
+    flex-direction: column; /* stack image + text */
+    text-align: center;
+    gap: 35px;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+}
