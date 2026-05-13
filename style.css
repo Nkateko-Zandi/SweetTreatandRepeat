@@ -255,3 +255,226 @@ body {
 
   margin-bottom: 18px;
 }
+/*===== Contact panel ======= */
+/* ================= CONTACT PANEL ================= */
+
+.contact-panel {
+  position: fixed;
+
+  top: 0;
+  right: -380px;
+
+  width: 360px;
+  height: 100vh;
+
+  padding: 45px 35px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(18px);
+
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+
+  transition: 0.5s ease;
+
+  z-index: 1000;
+}
+
+/* PANEL ACTIVE */
+.contact-panel.active {
+  right: 0;
+}
+
+/* TITLE */
+.contact-panel h2 {
+  font-family: Georgia, serif;
+
+  font-size: 42px;
+
+  color: #0b6b6d;
+
+  margin-bottom: 45px;
+}
+
+/* CONTACT LINKS */
+.contact-panel a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  text-decoration: none;
+
+  font-size: 19px;
+
+  color: #124f54;
+
+  background-color: rgba(255, 255, 255, 0.35);
+
+  padding: 16px 18px;
+
+  border-radius: 18px;
+
+  margin-bottom: 22px;
+
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.contact-panel a:hover {
+  transform: translateX(8px);
+
+  background-color: rgba(255, 255, 255, 0.55);
+
+  color: #0b6b6d;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+
+  top: 18px;
+  right: 22px;
+
+  background: none;
+
+  border: none;
+
+  font-size: 40px;
+
+  color: #0b6b6d;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* DARK OVERLAY */
+.overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(3px);
+
+  display: none;
+
+  z-index: 900;
+}
+
+.overlay.active {
+  display: block;
+}
+/* ================= FALLING SWEETS ================= */
+
+/* ================= FALLING SWEETS ================= */
+
+.falling-sweets {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* INDIVIDUAL SWEETS */
+.falling-sweets span {
+  position: absolute;
+
+  top: -60px;
+
+  font-size: 42px;
+
+  opacity: 0.75;
+
+  animation: fall 14s linear infinite;
+}
+
+/* SWEET POSITIONS */
+.falling-sweets span:nth-child(1) {
+  left: 1%;
+  animation-delay: 4s;
+}
+.falling-sweets span:nth-child(2) {
+  left: 8%;
+  animation-delay: 3s;
+}
+.falling-sweets span:nth-child(3) {
+  left: 15%;
+  animation-delay: 5s;
+}
+.falling-sweets span:nth-child(4) {
+  left: 22%;
+  animation-delay: 9s;
+}
+
+.falling-sweets span:nth-child(5) {
+  left: 38%;
+  animation-delay: 6s;
+}
+
+.falling-sweets span:nth-child(6) {
+  left: 58%;
+  animation-delay: 5s;
+}
+.falling-sweets span:nth-child(7) {
+  left: 67%;
+  animation-delay: 10s;
+}
+
+.falling-sweets span:nth-child(8) {
+  left: 78%;
+  animation-delay: 5s;
+}
+
+.falling-sweets span:nth-child(9) {
+  left: 89%;
+  animation-delay: 8s;
+}
+.falling-sweets span:nth-child(10) {
+  left: 94%;
+  animation-delay: 5s;
+}
+
+/* FALL ANIMATION */
+@keyframes fall {
+  0% {
+    transform: translateY(-60px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(50vh) translateX(25px) rotate(180deg);
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(-25px) rotate(360deg);
+  }
+}
+
+/* KEEP ABOUT BOX ABOVE SWEETS */
+.about-container {
+  position: relative;
+
+  z-index: 5;
+}
