@@ -205,7 +205,7 @@ body {
 
   border-radius: 35px;
 
-  padding: 70px;
+  padding: 50px;
 }
 
 .about-container h1 {
@@ -387,74 +387,72 @@ body {
 
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   overflow: hidden;
-
   pointer-events: none;
-
   z-index: 2;
 }
 
 /* INDIVIDUAL SWEETS */
 .falling-sweets span {
   position: absolute;
-
   top: -60px;
-
   font-size: 42px;
-
   opacity: 0.75;
-
   animation: fall 14s linear infinite;
+   will-change: transform;
 }
 
 /* SWEET POSITIONS */
 .falling-sweets span:nth-child(1) {
   left: 1%;
-  animation-delay: 4s;
+  animation-delay: -2s;
 }
+
 .falling-sweets span:nth-child(2) {
   left: 8%;
-  animation-delay: 3s;
+  animation-delay: -5s;
 }
+
 .falling-sweets span:nth-child(3) {
   left: 15%;
-  animation-delay: 5s;
+  animation-delay: -8s;
 }
+
 .falling-sweets span:nth-child(4) {
   left: 22%;
-  animation-delay: 9s;
+  animation-delay: -3s;
 }
 
 .falling-sweets span:nth-child(5) {
   left: 38%;
-  animation-delay: 6s;
+  animation-delay: -10s;
 }
 
 .falling-sweets span:nth-child(6) {
   left: 58%;
-  animation-delay: 5s;
+  animation-delay: -6s;
 }
+
 .falling-sweets span:nth-child(7) {
   left: 67%;
-  animation-delay: 10s;
+  animation-delay: -12s;
 }
 
 .falling-sweets span:nth-child(8) {
   left: 78%;
-  animation-delay: 5s;
+  animation-delay: -4s;
 }
 
 .falling-sweets span:nth-child(9) {
   left: 89%;
-  animation-delay: 8s;
+  animation-delay: -9s;
 }
+
 .falling-sweets span:nth-child(10) {
   left: 94%;
-  animation-delay: 5s;
+  animation-delay: -7s;
 }
 
 /* FALL ANIMATION */
@@ -473,8 +471,209 @@ body {
 }
 
 /* KEEP ABOUT BOX ABOVE SWEETS */
+.falling-sweets {
+  z-index: 0;
+}
+
+/* Product page must be above sweets */
+.product-page {
+  position: relative;
+  z-index: 2;
+}
+
+/* Cards must also stay above */
+.product-card-large,
+.highlight-box,
+.order-box {
+  position: relative;
+  z-index: 3;
+}
 .about-container {
   position: relative;
 
+  z-index: 10;
+}
+
+/* ================= PRODUCT PAGE ================= */
+
+.product-page {
+  min-height: 100vh;
+  padding: 25px 55px 40px;
+}
+
+.product-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 70px;
+  margin-top: 20px;
+}
+
+.product-card-large {
+  width: 480px;
+  background-color: #d8d6ca;
+  border-radius: 25px;
+  padding: 25px 38px;
+}
+
+.product-card-large h1 {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  color: #0b6b6d;
+  margin-bottom: 25px;
+}
+
+.main-product-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.small-images {
+  display: flex;
+  gap: 22px;
+  margin: 12px 0 18px;
+}
+
+.small-images img {
+  width: 35px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.product-card-large h2 {
+  font-size: 24px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.product-card-large p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #111;
+}
+
+.product-side {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.highlight-box,
+.order-box {
+  background-color: #f3f0ea;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.highlight-box h3,
+.order-box h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.highlight-box p,
+.order-box p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.highlight-box hr {
+  margin-bottom: 15px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: #58a833;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #46912a;
+}
+.product-card-large,
+.highlight-box,
+.order-box,
+.navbar {
+  position: relative;
   z-index: 5;
+}
+.small-images img {
+  cursor: pointer;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 20px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.lightbox-btn {
+  position: absolute;
+  background: white;
+  color: #0b6b6d;
+  border: none;
+  font-size: 35px;
+  padding: 10px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.lightbox-btn.left {
+  left: 40px;
+}
+
+.lightbox-btn.right {
+  right: 40px;
+}
+.small-images {
+  position: relative;
+  z-index: 20;
+}
+
+.gallery-img {
+  position: relative;
+  z-index: 21;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.falling-sweets {
+  pointer-events: none;
 }
